@@ -27,7 +27,7 @@ public class FlagCaller extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		/* Frame f = */new FlagCaller();
+		new FlagCaller();
 	}
 
 }

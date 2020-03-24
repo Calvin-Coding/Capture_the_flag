@@ -45,10 +45,10 @@ public class FlagPanel extends JPanel implements KeyListener {
 		int key = k.getKeyCode();
 		if (key == KeyEvent.VK_UP) {
 			y1 = y1 - 9;
-			// System.ut.println("UP");
+
 		} else if (key == KeyEvent.VK_DOWN) {
 			y1 = y1 + 9;
-			// System.out.println("DOWN");
+
 		} else if (key == KeyEvent.VK_RIGHT) {
 			x1 = x1 + 10;
 		} else if (key == KeyEvent.VK_LEFT) {
