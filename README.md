@@ -1,2 +1,6 @@
 # Capture_the_flag
-This is a capture the flag game.
+#by Calvin-Coding
+#Java
+
+This is a simple Swing Capture the flag game.
+Not finished.
