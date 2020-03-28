@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 public class FlagPanel extends JPanel implements KeyListener {
 	private int x, y, x1, y1;
-	private boolean b, flag1;
+	private boolean b, flag1, flag2;
 	private static final long serialVersionUID = 1L;
 
 	public FlagPanel() {
@@ -20,6 +20,8 @@ public class FlagPanel extends JPanel implements KeyListener {
 		x1 = 740;
 		y1 = 400;
 		b = false;
+		flag1 = false;
+		flag2 = false;
 	}
 
 	/*
@@ -54,8 +56,8 @@ public class FlagPanel extends JPanel implements KeyListener {
 		} else if (key == KeyEvent.VK_LEFT) {
 			x1 = x1 - 9;
 		} else if (key == KeyEvent.VK_ENTER && b == false) {
-			x1 = 0;
-			y1 = 400;
+			x = 400;
+			y = 750;
 			b = true;
 		} else if (key == KeyEvent.VK_ENTER && b == true) {
 			x1 = 20;
@@ -63,9 +65,19 @@ public class FlagPanel extends JPanel implements KeyListener {
 			b = false;
 
 		}
+		if (y1 < y + 7 && y1 > y - 2 && x1 < x + 7 && x1 > x - 2 && x > 400) {
+			flag2 = false;
+			System.out.println("Purple Dies");
+			x = 20;
+			y = 400;
+		}
 		if (y1 < 407 && y1 > 398 && x1 < 7 && x1 > -2) {
 			flag1 = true;
 			System.out.println("flag1");
+		}
+		if (x1 < 757 && x1 > 748 && y1 < 407 && y1 > 398 && flag1 == true) {
+			flag1 = false;
+			System.out.println("Yellow Wins");
 		}
 
 		repaint();
@@ -82,6 +94,20 @@ public class FlagPanel extends JPanel implements KeyListener {
 			x = x + 9;
 		} else if (key == 'a') {
 			x = x - 9;
+		}
+		if (y < y1 + 7 && y > y1 - 2 && x < x1 + 7 && x > x1 - 2 && x1 < 400) {
+			flag1 = false;
+			System.out.println("Yellow Dies");
+			x1 = 740;
+			y1 = 400;
+		}
+		if (x < 757 && x > 748 && y < 407 && y > 398) {
+			flag2 = true;
+			System.out.println("flag2");
+		}
+		if (y < 407 && y > 398 && x < 7 && x > -2 && flag2 == true) {
+			flag2 = false;
+			System.out.println("Purple Wins");
 		}
 	}
 
