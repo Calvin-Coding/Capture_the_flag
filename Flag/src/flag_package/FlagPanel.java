@@ -31,10 +31,19 @@ public class FlagPanel extends JPanel implements KeyListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		setBackground(Color.BLUE);
-		g.setColor(new Color(179, 77, 170));
-
+		// purple
+		if (flag2 == false) {
+			g.setColor(new Color(179, 77, 170));
+		} else {
+			g.setColor(Color.PINK);
+		}
 		g.fillOval(x, y, 30, 30);
-		g.setColor(Color.YELLOW);
+		// yellow
+		if (flag1 == false) {
+			g.setColor(Color.YELLOW);
+		} else {
+			g.setColor(Color.GREEN);
+		}
 		g.fillOval(x1, y1, 30, 30);
 		g.setColor(Color.CYAN);
 		g.fillRect(390, 0, 30, 800);
@@ -67,17 +76,17 @@ public class FlagPanel extends JPanel implements KeyListener {
 		}
 		if (y1 < y + 7 && y1 > y - 2 && x1 < x + 7 && x1 > x - 2 && x > 400) {
 			flag2 = false;
-			System.out.println("Purple Dies");
+			System.out.println("\t\t\tPurple Dies");
 			x = 20;
 			y = 400;
 		}
-		if (y1 < 407 && y1 > 398 && x1 < 7 && x1 > -2) {
+		if (y1 < 407 && y1 > 393 && x1 < 7 && x1 > -7) {
 			flag1 = true;
-			System.out.println("flag1");
+			System.out.println("\t\t\tflag1");
 		}
 		if (x1 < 757 && x1 > 748 && y1 < 407 && y1 > 398 && flag1 == true) {
 			flag1 = false;
-			System.out.println("Yellow Wins");
+			System.out.println("\t\t\tYellow Wins");
 		}
 
 		repaint();
@@ -97,17 +106,17 @@ public class FlagPanel extends JPanel implements KeyListener {
 		}
 		if (y < y1 + 7 && y > y1 - 2 && x < x1 + 7 && x > x1 - 2 && x1 < 400) {
 			flag1 = false;
-			System.out.println("Yellow Dies");
+			System.out.println("\t\t\tYellow Dies");
 			x1 = 740;
 			y1 = 400;
 		}
-		if (x < 757 && x > 748 && y < 407 && y > 398) {
+		if (x < 757 && x > 743 && y < 407 && y > 393) {
 			flag2 = true;
-			System.out.println("flag2");
+			System.out.println("\t\t\tflag2");
 		}
 		if (y < 407 && y > 398 && x < 7 && x > -2 && flag2 == true) {
 			flag2 = false;
-			System.out.println("Purple Wins");
+			System.out.println("\t\t\tPurple Wins");
 		}
 	}
 
